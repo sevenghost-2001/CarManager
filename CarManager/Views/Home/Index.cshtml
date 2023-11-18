@@ -1,4 +1,4 @@
-﻿@model CarManager.Models.Part
+﻿@model IEnumerable<CarManager.Models.Part>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -180,7 +180,11 @@
                             <span>Linh Kiện</span>
                         </div>
                         <ul>
-                            <li><a href="#">Fresh Meat</a></li>
+                            @foreach (var item in Model)
+                            {
+                                <li><a href="#">@item.Name</a></li>
+                            }
+                            @* <li><a href="#">Fresh Meat</a></li>
                             <li><a href="#">Vegetables</a></li>
                             <li><a href="#">Fruit & Nut Gifts</a></li>
                             <li><a href="#">Fresh Berries</a></li>
@@ -190,7 +194,7 @@
                             <li><a href="#">Fresh Onion</a></li>
                             <li><a href="#">Papayaya & Crisps</a></li>
                             <li><a href="#">Oatmeal</a></li>
-                            <li><a href="#">Fresh Bananas</a></li>
+                            <li><a href="#">Fresh Bananas</a></li> *@
                         </ul>
                     </div>
                 </div>
