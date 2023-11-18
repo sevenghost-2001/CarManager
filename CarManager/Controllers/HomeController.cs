@@ -1,5 +1,6 @@
 ﻿using CarManager.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace CarManager.Controllers
@@ -16,15 +17,16 @@ namespace CarManager.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            List<Car> cars = db.Cars.AsNoTracking().OrderBy(x=>x.Make).ToList();   
+            return View(cars);
         }
         public IActionResult XeTheoLoai(string maloai)
         {
-            List<Car> cars = db.Cars.Where(x=>x.Model == maloai).ToList();
-            return View(cars);  
+            return View();
         }
         public IActionResult Privacy()
         {
+
             return View();
         }
 

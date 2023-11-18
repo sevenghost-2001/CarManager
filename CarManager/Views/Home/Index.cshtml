@@ -1,4 +1,9 @@
-﻿@model IEnumerable<CarManager.Models.Part>
+﻿@model CarManager.Models.Car
+@{
+    ViewData["Title"] = "Index";
+}
+
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -180,6 +185,10 @@
                             <span>Linh Kiện</span>
                         </div>
                         <ul>
+                            @*@foreach (var item in Model)
+                            {
+                            <li><a href="#">\</a>@item.Model</li>
+                            }*@
                             <li><a href="#">Fresh Meat</a></li>
                             <li><a href="#">Vegetables</a></li>
                             <li><a href="#">Fruit & Nut Gifts</a></li>
@@ -434,3 +443,4 @@
 </body>
 
 </html>
+
