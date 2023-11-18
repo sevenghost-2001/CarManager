@@ -6,6 +6,7 @@ namespace CarManager.Controllers
 {
     public class HomeController : Controller
     {
+        CarDealerContext db= new CarDealerContext();
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -17,7 +18,11 @@ namespace CarManager.Controllers
         {
             return View();
         }
-
+        public IActionResult XeTheoLoai(string maloai)
+        {
+            List<Car> cars = db.Cars.Where(x=>x.Model == maloai).ToList();
+            return View(cars);  
+        }
         public IActionResult Privacy()
         {
             return View();
