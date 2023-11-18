@@ -1,8 +1,436 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model CarManager.Models.Part
+<!DOCTYPE html>
+<html lang="zxx">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ogani | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="/LayoutOgani/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/LayoutOgani/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/LayoutOgani/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/LayoutOgani/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/LayoutOgani/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/LayoutOgani/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/LayoutOgani/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/LayoutOgani/css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Humberger Begin -->
+    <div class="humberger__menu__overlay"></div>
+    <div class="humberger__menu__wrapper">
+        <div class="humberger__menu__logo">
+            <a href="#"><img src="/LayoutOgani/img/logo.png" alt=""></a>
+        </div>
+        <div class="humberger__menu__cart">
+            <ul>
+                <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+            </ul>
+            <div class="header__cart__price">item: <span>$150.00</span></div>
+        </div>
+        <div class="humberger__menu__widget">
+            <div class="header__top__right__language">
+                <img src="/LayoutOgani/img/language.png" alt="">
+                <div>English</div>
+                <span class="arrow_carrot-down"></span>
+                <ul>
+                    <li><a href="#">Spanis</a></li>
+                    <li><a href="#">English</a></li>
+                </ul>
+            </div>
+            <div class="header__top__right__auth">
+                <a href="/Access/Logout"><i class="fa fa-user"></i> Logout</a>
+            </div>
+        </div>
+        <nav class="humberger__menu__nav mobile-menu">
+            <ul>
+                <li class="active"><a href="./index.html">Home</a></li>
+                <li><a href="./shop-grid.html">Shop</a></li>
+                <li>
+                    <a href="#">Pages</a>
+                    <ul class="header__menu__dropdown">
+                        <li><a href="./shop-details.html">Shop Details</a></li>
+                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
+                        <li><a href="./checkout.html">Check Out</a></li>
+                        <li><a href="./blog-details.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+        <div class="header__top__right__social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+        </div>
+        <div class="humberger__menu__contact">
+            <ul>
+                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+                <li>Free Shipping for all Order of $99</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Humberger End -->
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__left">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+                                <li>Free Shipping for all Order of $99</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__right">
+                            <div class="header__top__right__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                            <div class="header__top__right__language">
+                                <img src="/LayoutOgani/img/language.png" alt="">
+                                <div>English</div>
+                                <span class="arrow_carrot-down"></span>
+                                <ul>
+                                    <li><a href="#">Spanis</a></li>
+                                    <li><a href="#">English</a></li>
+                                </ul>
+                            </div>
+                            <div class="header__top__right__auth">
+                                <a href="/Access/Logout"><i class="fa fa-user"></i> Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="/LayoutOgani/img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li><a href="./shop-grid.html">Shop</a></li>
+                            <li>
+                                <a href="#">Pages</a>
+                                <ul class="header__menu__dropdown">
+                                    <li><a href="./shop-details.html">Shop Details</a></li>
+                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
+                                    <li><a href="./checkout.html">Check Out</a></li>
+                                    <li><a href="./blog-details.html">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./blog.html">Blog</a></li>
+                            <li><a href="./contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        </ul>
+                        <div class="header__cart__price">item: <span>$150.00</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="humberger__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Hero Section Begin -->
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span>Linh Kiện</span>
+                        </div>
+                        <ul>
+                            <li><a href="#">Fresh Meat</a></li>
+                            <li><a href="#">Vegetables</a></li>
+                            <li><a href="#">Fruit & Nut Gifts</a></li>
+                            <li><a href="#">Fresh Berries</a></li>
+                            <li><a href="#">Ocean Foods</a></li>
+                            <li><a href="#">Butter & Eggs</a></li>
+                            <li><a href="#">Fastfood</a></li>
+                            <li><a href="#">Fresh Onion</a></li>
+                            <li><a href="#">Papayaya & Crisps</a></li>
+                            <li><a href="#">Oatmeal</a></li>
+                            <li><a href="#">Fresh Bananas</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="hero__search">
+                        <div class="hero__search__form">
+                            <form action="#">
+                                <div class="hero__search__categories">
+                                    All Categories
+                                    <span class="arrow_carrot-down"></span>
+                                </div>
+                                <input type="text" placeholder="What do yo u need?">
+                                <button type="submit" class="site-btn">SEARCH</button>
+                            </form>
+                        </div>
+                        <div class="hero__search__phone">
+                            <div class="hero__search__phone__icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="hero__search__phone__text">
+                                <h5>+65 11.188.888</h5>
+                                <span>support 24/7 time</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero__item set-bg" data-setbg="~/LayoutOgani/img/hero/banner.jpg">
+                        <div class="hero__text">
+                            <span>FRUIT FRESH</span>
+                            <h2>Vegetable <br />100% Organic</h2>
+                            <p>Free Pickup and Delivery Available</p>
+                            <a href="#" class="primary-btn">SHOP NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+    <!-- Categories Section Begin -->
+    <section class="categories">
+        <div class="container">
+            <div class="row">
+                <div class="categories__slider owl-carousel">
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="~/LayoutOgani/img/categories/cat-1.jpg">
+                            <h5><a href="#">Fresh Fruit</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="~/LayoutOgani/img/categories/cat-2.jpg">
+                            <h5><a href="#">Dried Fruit</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="~/LayoutOgani/img/categories/cat-3.jpg">
+                            <h5><a href="#">Vegetables</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="~/LayoutOgani/img/categories/cat-4.jpg">
+                            <h5><a href="#">drink fruits</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="~/LayoutOgani/img/categories/cat-5.jpg">
+                            <h5><a href="#">drink fruits</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Categories Section End -->
+    <!-- Featured Section Begin -->
+    <section class="featured spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Featured Product</h2>
+                    </div>
+                    <div class="featured__controls">
+                        <ul>
+                            <li class="active" data-filter="*">All</li>
+                            <li data-filter=".oranges">Oranges</li>
+                            <li data-filter=".fresh-meat">Fresh Meat</li>
+                            <li data-filter=".vegetables">Vegetables</li>
+                            <li data-filter=".fastfood">Fastfood</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row featured__filter">
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="/LayoutOgani/imagesWebBanVali/images/balo-roncato-runaway-trang-111.jpg                                                                  " style="background-image: url(&quot;img/featured/feature-1.jpg&quot;);">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="/Home/ChiTietSanPham?masp=bacakeroirbl1111%20%20%20%20%20%20%20%20%20">a balo can keo roncato ironik green</a></h6>
+                            <h5></h5>
+                        </div>
+                    </div>
+                </div><div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="/LayoutOgani/imagesWebBanVali/images/balo-can-keo-roncato-ironik-green-180.jpg                                                           " style="background-image: url(&quot;img/featured/feature-1.jpg&quot;);">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="/Home/ChiTietSanPham?masp=bacakeroirgr%20%20%20%20%20%20%20%20%20%20%20%20%20">balo can keo roncato ironik green</a></h6>
+                            <h5>2500000.0000</h5>
+                        </div>
+                    </div>
+                </div><div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="/LayoutOgani/imagesWebBanVali/images/balo-roncato-runaway-trang-111.jpg                                                                  " style="background-image: url(&quot;img/featured/feature-1.jpg&quot;);">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="/Home/ChiTietSanPham?masp=bacak234566%20%20%20%20%20%20%20%20%20%20%20%20%20%20">balo can keo roncato ironik green</a></h6>
+                            <h5></h5>
+                        </div>
+                    </div>
+                </div><div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="/LayoutOgani/imagesWebBanVali/images/balo-roncato-runaway-trang-111.jpg                                                                  " style="background-image: url(&quot;img/featured/feature-1.jpg&quot;);">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="/Home/ChiTietSanPham?masp=bacakeroirbl%20%20%20%20%20%20%20%20%20%20%20%20%20">balo can keo roncato ironik green</a></h6>
+                            <h5></h5>
+                        </div>
+                    </div>
+                </div><div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="/LayoutOgani/imagesWebBanVali/images/balo-roncato-runaway-03-do-1.jpg                                                                    " style="background-image: url(&quot;img/featured/feature-1.jpg&quot;);">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="/Home/ChiTietSanPham?masp=baroru3do%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20">balo roncato runaway 03 do</a></h6>
+                            <h5>2500000.0000</h5>
+                        </div>
+                    </div>
+                </div><div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="/LayoutOgani/imagesWebBanVali/images/balo-roncato-runaway-hong-138.jpg                                                                   " style="background-image: url(&quot;img/featured/feature-1.jpg&quot;);">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="/Home/ChiTietSanPham?masp=baroruho%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20">balo roncato runaway hong</a></h6>
+                            <h5>2500000.0000</h5>
+                        </div>
+                    </div>
+                </div><div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="/LayoutOgani/imagesWebBanVali/images/balo-roncato-runaway-trang-111.jpg                                                                  " style="background-image: url(&quot;img/featured/feature-1.jpg&quot;);">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="/Home/ChiTietSanPham?masp=barorutr%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20">balo roncato runaway trang</a></h6>
+                            <h5>2500000.0000</h5>
+                        </div>
+                    </div>
+                </div><div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="/LayoutOgani/imagesWebBanVali/images/balo-roncato-runway-den-144.jpg                                                                     " style="background-image: url(&quot;img/featured/feature-1.jpg&quot;);">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="/Home/ChiTietSanPham?masp=barorude%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20">balo roncato runway den</a></h6>
+                            <h5>2500000.0000</h5>
+                        </div>
+                    </div>
+                </div><div class="product__pagination">
+                    <div class="&#x70;&#x61;&#x67;&#x69;&#x6E;&#x61;&#x74;&#x69;&#x6F;&#x6E;&#x2D;&#x63;&#x6F;&#x6E;&#x74;&#x61;&#x69;&#x6E;&#x65;&#x72;"><ul class="&#x70;&#x61;&#x67;&#x69;&#x6E;&#x61;&#x74;&#x69;&#x6F;&#x6E;"><li class="&#x61;&#x63;&#x74;&#x69;&#x76;&#x65;"><span>&#x31;</span></li><li><a href="&#x2F;&#x3F;&#x70;&#x61;&#x67;&#x65;&#x3D;&#x32;">&#x32;</a></li><li><a href="&#x2F;&#x3F;&#x70;&#x61;&#x67;&#x65;&#x3D;&#x33;">&#x33;</a></li><li><a href="&#x2F;&#x3F;&#x70;&#x61;&#x67;&#x65;&#x3D;&#x34;">&#x34;</a></li><li><a href="&#x2F;&#x3F;&#x70;&#x61;&#x67;&#x65;&#x3D;&#x35;">&#x35;</a></li><li><a href="&#x2F;&#x3F;&#x70;&#x61;&#x67;&#x65;&#x3D;&#x36;">&#x36;</a></li><li><a href="&#x2F;&#x3F;&#x70;&#x61;&#x67;&#x65;&#x3D;&#x37;">&#x37;</a></li><li><a href="&#x2F;&#x3F;&#x70;&#x61;&#x67;&#x65;&#x3D;&#x38;">&#x38;</a></li><li><a href="&#x2F;&#x3F;&#x70;&#x61;&#x67;&#x65;&#x3D;&#x39;">&#x39;</a></li><li><a href="&#x2F;&#x3F;&#x70;&#x61;&#x67;&#x65;&#x3D;&#x31;&#x30;">&#x31;&#x30;</a></li><li class="&#x50;&#x61;&#x67;&#x65;&#x64;&#x4C;&#x69;&#x73;&#x74;&#x2D;&#x65;&#x6C;&#x6C;&#x69;&#x70;&#x73;&#x65;&#x73;"><a class="&#x50;&#x61;&#x67;&#x65;&#x64;&#x4C;&#x69;&#x73;&#x74;&#x2D;&#x73;&#x6B;&#x69;&#x70;&#x54;&#x6F;&#x4E;&#x65;&#x78;&#x74;" href="&#x2F;&#x3F;&#x70;&#x61;&#x67;&#x65;&#x3D;&#x31;&#x31;" rel="&#x6E;&#x65;&#x78;&#x74;">&#8230;</a></li><li class="&#x50;&#x61;&#x67;&#x65;&#x64;&#x4C;&#x69;&#x73;&#x74;&#x2D;&#x73;&#x6B;&#x69;&#x70;&#x54;&#x6F;&#x4E;&#x65;&#x78;&#x74;"><a href="&#x2F;&#x3F;&#x70;&#x61;&#x67;&#x65;&#x3D;&#x32;" rel="&#x6E;&#x65;&#x78;&#x74;">></a></li><li class="&#x50;&#x61;&#x67;&#x65;&#x64;&#x4C;&#x69;&#x73;&#x74;&#x2D;&#x73;&#x6B;&#x69;&#x70;&#x54;&#x6F;&#x4C;&#x61;&#x73;&#x74;"><a href="&#x2F;&#x3F;&#x70;&#x61;&#x67;&#x65;&#x3D;&#x31;&#x35;">>></a></li></ul></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Featured Section End -->
+    <!-- Banner Begin -->
+    <!-- Banner End -->
+    <!-- Latest Product Section Begin -->
+    <!-- Latest Product Section End -->
+    <!-- Blog Section Begin -->
+    <!-- Blog Section End -->
+    <!-- Footer Section Begin -->
+    <!-- Footer Section End -->
+    <!-- Js Plugins -->
+    <script src="/LayoutOgani/js/jquery-3.3.1.min.js"></script>
+    <script src="/LayoutOgani/js/bootstrap.min.js"></script>
+    <script src="/LayoutOgani/js/jquery.nice-select.min.js"></script>
+    <script src="/LayoutOgani/js/jquery-ui.min.js"></script>
+    <script src="/LayoutOgani/js/jquery.slicknav.js"></script>
+    <script src="/LayoutOgani/js/mixitup.min.js"></script>
+    <script src="/LayoutOgani/js/owl.carousel.min.js"></script>
+    <script src="/LayoutOgani/js/main.js"></script>
+
+
+
+
+    <!-- Visual Studio Browser Link -->
+    <script type="text/javascript" src="/_vs/browserLink" async="async" id="__browserLink_initializationData" data-requestId="0931d3843b684e64b778e3ecae34eae4" data-requestMappingFromServer="false" data-connectUrl="http://localhost:63372/0a362e3dc9d242ec9c5fe6d74d96bc76/browserLink"></script>
+    <!-- End Browser Link -->
+
+    <script src="/_framework/aspnetcore-browser-refresh.js"></script>
+</body>
+
+</html>
